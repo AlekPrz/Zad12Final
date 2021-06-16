@@ -22,7 +22,6 @@ public class BookController {
 
     @GetMapping("/booksByName/{filter}")
     public Collection<Book> findBooksByName(@PathVariable String filter) {
-        System.out.println("First");
         return Book.books.stream()
                 .filter(p -> p.getName().toLowerCase().contains(filter.toLowerCase()))
                 .collect(Collectors.toList());
